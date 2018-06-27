@@ -33,6 +33,7 @@
 		81D41B5420E379F900E5B100 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D41B5320E379F900E5B100 /* MapKit.framework */; };
 		81D41B5620E3824D00E5B100 /* RestaurantDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D41B5520E3824D00E5B100 /* RestaurantDetailSeparatorCell.swift */; };
 		81D41B5820E3834400E5B100 /* RestaurantDetailMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D41B5720E3834400E5B100 /* RestaurantDetailMapCell.swift */; };
+		81D41B5A20E3ACC400E5B100 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D41B5920E3ACC400E5B100 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		81D41B5320E379F900E5B100 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		81D41B5520E3824D00E5B100 /* RestaurantDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailSeparatorCell.swift; sourceTree = "<group>"; };
 		81D41B5720E3834400E5B100 /* RestaurantDetailMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailMapCell.swift; sourceTree = "<group>"; };
+		81D41B5920E3ACC400E5B100 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				816CC0F320D0543B0006A5A5 /* RestaurantTableViewController.swift */,
 				81267A4020D9C1F400692D36 /* RestaurantDetailViewController.swift */,
+				81D41B5920E3ACC400E5B100 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				8108AEF520E129F200BEA29F /* RestaurantDetailTextCell.swift in Sources */,
 				8108AEF720E12E9500BEA29F /* RestaurantDetailIconTextCell.swift in Sources */,
 				816CC0F420D0543B0006A5A5 /* RestaurantTableViewController.swift in Sources */,
+				81D41B5A20E3ACC400E5B100 /* MapViewController.swift in Sources */,
 				81450C3A20D162A9005DCC21 /* RestaurantTableViewCell.swift in Sources */,
 				81B9E7B120E25284006CF5EA /* UINavigationController-Ext.swift in Sources */,
 				81267A4120D9C1F400692D36 /* RestaurantDetailViewController.swift in Sources */,

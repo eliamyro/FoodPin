@@ -281,7 +281,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="214.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmC-NS-cbE">
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmC-NS-cbE">
                                                     <rect key="frame" x="0.0" y="10" width="375" height="204.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="204.5" id="7bY-ut-GPC"/>
@@ -297,6 +297,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="mapView" destination="HmC-NS-cbE" id="76q-ld-LDW"/>
+                                            <segue destination="Axt-95-Dbt" kind="show" identifier="showMap" id="A1J-JQ-kW4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -320,6 +321,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbB-7l-YKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1964" y="147.97601199400302"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="usT-UQ-4qX">
+            <objects>
+                <viewController id="Axt-95-Dbt" customClass="MapViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pOq-9b-gJk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KHy-Js-AaH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="KHy-Js-AaH" firstAttribute="leading" secondItem="pOq-9b-gJk" secondAttribute="leading" id="8uA-2V-LUQ"/>
+                            <constraint firstItem="KHy-Js-AaH" firstAttribute="top" secondItem="pOq-9b-gJk" secondAttribute="top" id="SWH-Bg-ZfT"/>
+                            <constraint firstAttribute="trailing" secondItem="KHy-Js-AaH" secondAttribute="trailing" id="dhR-lW-xR7"/>
+                            <constraint firstAttribute="bottom" secondItem="KHy-Js-AaH" secondAttribute="bottom" id="poF-Uz-ez6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ZdU-uR-HqC"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="KHy-Js-AaH" id="4t2-il-5WR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WEK-vI-vR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2750" y="210"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oq0-8x-3aA">
