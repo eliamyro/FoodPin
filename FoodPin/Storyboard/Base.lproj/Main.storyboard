@@ -213,7 +213,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailIconTextCell" id="xie-wY-UQ5" customClass="RestaurantDetailIconTextCell" customModule="FoodPin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailIconTextCell" id="xie-wY-UQ5" customClass="RestaurantDetailIconTextCell" customModule="FoodPin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="378" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xie-wY-UQ5" id="zrU-Y5-t5r">
@@ -251,7 +251,7 @@
                                             <outlet property="shortTextLabel" destination="36S-ly-Pmf" id="0fm-QR-KiQ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailTextCell" id="Rr9-9Q-E2R" customClass="RestaurantDetailTextCell" customModule="FoodPin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailTextCell" id="Rr9-9Q-E2R" customClass="RestaurantDetailTextCell" customModule="FoodPin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="422" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rr9-9Q-E2R" id="LVz-rh-VEy">
@@ -276,7 +276,7 @@
                                             <outlet property="descriptionLabel" destination="WKE-Uf-aSJ" id="rZu-Iw-EjW"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailSeparatorCell" id="PvB-Bh-myG" userLabel="RestaurantDetailSeparatorCell" customClass="RestaurantDetailSeparatorCell" customModule="FoodPin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailSeparatorCell" id="PvB-Bh-myG" userLabel="RestaurantDetailSeparatorCell" customClass="RestaurantDetailSeparatorCell" customModule="FoodPin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="466" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PvB-Bh-myG" id="i3I-to-6yb">
@@ -313,14 +313,14 @@
                                             <outlet property="titleLabel" destination="dLs-6O-JKi" id="oK6-oh-i9x"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailMapCell" rowHeight="215" id="sGN-X7-d5h" customClass="RestaurantDetailMapCell" customModule="FoodPin" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RestaurantDetailMapCell" rowHeight="215" id="sGN-X7-d5h" customClass="RestaurantDetailMapCell" customModule="FoodPin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="510" width="375" height="215"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sGN-X7-d5h" id="xyV-dy-1EK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="214.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmC-NS-cbE">
+                                                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HmC-NS-cbE">
                                                     <rect key="frame" x="0.0" y="10" width="375" height="204.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="204.5" id="7bY-ut-GPC"/>
@@ -330,13 +330,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="HmC-NS-cbE" secondAttribute="bottom" id="HwN-W8-oyb"/>
                                                 <constraint firstItem="HmC-NS-cbE" firstAttribute="leading" secondItem="xyV-dy-1EK" secondAttribute="leading" id="Hz8-fg-LwS"/>
-                                                <constraint firstItem="HmC-NS-cbE" firstAttribute="top" secondItem="xyV-dy-1EK" secondAttribute="top" constant="10" id="OK8-Xl-FOn"/>
+                                                <constraint firstItem="HmC-NS-cbE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="xyV-dy-1EK" secondAttribute="top" constant="10" id="OK8-Xl-FOn"/>
                                                 <constraint firstAttribute="trailing" secondItem="HmC-NS-cbE" secondAttribute="trailing" id="s4M-T2-VBu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="mapView" destination="HmC-NS-cbE" id="76q-ld-LDW"/>
-                                            <segue destination="Axt-95-Dbt" kind="show" identifier="showMap" id="A1J-JQ-kW4"/>
+                                            <segue destination="Axt-95-Dbt" kind="show" identifier="showMap" id="vWk-ec-mvD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

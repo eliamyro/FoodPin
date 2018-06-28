@@ -200,8 +200,8 @@ class RestaurantTableViewController: UITableViewController {
         }
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
 
 }
