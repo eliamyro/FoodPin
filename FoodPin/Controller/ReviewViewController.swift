@@ -11,6 +11,7 @@ import UIKit
 class ReviewViewController: UIViewController {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet var rateButtons: [UIButton]!
     
     var restaurant = Restaurant()
 
@@ -24,8 +25,20 @@ class ReviewViewController: UIViewController {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         backgroundImageView.addSubview(blurEffectView)
+        
+        for rateButton in rateButtons {
+            rateButton.alpha = 0.0
+        }
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 2.0) {
+            for rateButton in self.rateButtons {
+                rateButton.alpha = 1.0
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
