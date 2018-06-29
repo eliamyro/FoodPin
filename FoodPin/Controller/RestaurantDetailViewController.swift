@@ -34,6 +34,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDelegate, UIT
         headerView.nameLabel.text = restaurant.name
         headerView.typeLabel.text = restaurant.type
         headerView.heartImageView.isHidden = restaurant.isVisited ? false : true
+        headerView.ratingImageView.image = UIImage(named: restaurant.rating)
 
         // Do any additional setup after loading the view.
        
@@ -109,6 +110,15 @@ class RestaurantDetailViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func close(segue: UIStoryboardSegue) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func rateRestaurant(segue: UIStoryboardSegue) {
+        if let rating = segue.identifier {
+            self.restaurant.rating = rating
+            self.headerView.ratingImageView.image = UIImage(named: rating)
+        }
+        
         dismiss(animated: true, completion: nil)
     }
 }
