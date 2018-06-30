@@ -114,11 +114,21 @@ class RestaurantDetailViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     @IBAction func rateRestaurant(segue: UIStoryboardSegue) {
-        if let rating = segue.identifier {
-            self.restaurant.rating = rating
-            self.headerView.ratingImageView.image = UIImage(named: rating)
+        dismiss(animated: true) {
+            if let rating = segue.identifier {
+                self.restaurant.rating = rating
+                self.headerView.ratingImageView.image = UIImage(named: rating)
+                
+                let scaleTransform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+                self.headerView.ratingImageView.transform = scaleTransform
+                self.headerView.ratingImageView.alpha = 0.0
+                
+                UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.7, options: [], animations: {
+                    self.headerView.ratingImageView.transform = .identity
+                    self.headerView.ratingImageView.alpha = 1.0
+                }, completion: nil)
+            }
         }
         
-        dismiss(animated: true, completion: nil)
     }
 }
