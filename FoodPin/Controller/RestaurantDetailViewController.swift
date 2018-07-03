@@ -13,7 +13,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerView: RestaurantDetailHeaderView!
     
-    var restaurant = Restaurant()
+    var restaurant = RestaurantMO()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +30,14 @@ class RestaurantDetailViewController: UIViewController, UITableViewDelegate, UIT
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.separatorStyle = .none
         
-        headerView.headerImageView.image = UIImage(named: restaurant.image)
+        if let restaurantImage = restaurant.image {
+            headerView.headerImageView.image = UIImage(data: restaurantImage as Data)
+        }
+        
         headerView.nameLabel.text = restaurant.name
         headerView.typeLabel.text = restaurant.type
         headerView.heartImageView.isHidden = restaurant.isVisited ? false : true
-        headerView.ratingImageView.image = UIImage(named: restaurant.rating)
+        headerView.ratingImageView.image = UIImage(named: restaurant.rating ?? "")
 
         // Do any additional setup after loading the view.
        
@@ -89,7 +92,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDelegate, UIT
             
         case 4:
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: RestaurantDetailMapCell.self), for: indexPath) as! RestaurantDetailMapCell
-                cell.configure(location: restaurant.location)
+                cell.configure(location: restaurant.location!)
             return cell
             
         default:
