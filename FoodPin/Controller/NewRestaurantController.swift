@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -48,6 +49,8 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             descriptionTextView.layer.masksToBounds = true
         }
     }
+    
+    var restaurant: RestaurantMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,8 +128,22 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
     
     @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
         if validateForm() {
-            print("Name: \(String(describing: nameTextField.text))\n Type: \(String(describing: typeTextField.text)) \n Address: \(String(describing: addressTextField.text))\n Phone: \(String(describing: phoneTextField.text))")
-            
+            if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+                restaurant = RestaurantMO(context: appDelegate.persistentContainer.viewContext)
+                restaurant.name = nameTextField.text
+                restaurant.type = typeTextField.text
+                restaurant.location = addressTextField.text
+                restaurant.phone = phoneTextField.text
+                restaurant.summary = descriptionTextView.text
+                restaurant.isVisited = false
+                
+                if let restaurantImage = photoImageView.image {
+                    restaurant.image = UIImagePNGRepresentation(restaurantImage)
+                }
+                
+                print("Saving data to context...")
+                appDelegate.saveContext()
+            }
             performSegue(withIdentifier: "unwindToHome", sender: self)
         } else {
             let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: .alert)

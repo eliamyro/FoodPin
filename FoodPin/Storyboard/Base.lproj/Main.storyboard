@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -110,8 +111,30 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emptyRestaurantView" destination="cdr-D7-3dJ" id="TQb-4f-XO3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmU-2H-AbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="cdr-D7-3dJ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="v58-YE-bFw">
+                            <rect key="frame" x="28" y="120" width="319" height="355"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="v58-YE-bFw" secondAttribute="height" multiplier="80:89" id="Xta-KP-h2m"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="avA-Od-AGZ" firstAttribute="trailing" secondItem="v58-YE-bFw" secondAttribute="trailing" constant="28" id="6ka-be-3BM"/>
+                        <constraint firstItem="v58-YE-bFw" firstAttribute="leading" secondItem="avA-Od-AGZ" secondAttribute="leading" constant="28" id="d54-ZG-Kdg"/>
+                        <constraint firstItem="v58-YE-bFw" firstAttribute="top" secondItem="avA-Od-AGZ" secondAttribute="top" constant="100" id="khK-p7-l8q"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="avA-Od-AGZ"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="1076" y="147.97601199400302"/>
         </scene>
@@ -349,7 +372,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaT-Tk-8xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="GxZ-1D-dKH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="-488"/>
+            <point key="canvasLocation" x="2612" y="-480"/>
         </scene>
         <!--Restaurant Detail View Controller-->
         <scene sceneID="Z5e-Wb-2tY">
@@ -768,7 +791,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTA-DO-s82" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="-548"/>
+            <point key="canvasLocation" x="1857" y="-540"/>
         </scene>
     </scenes>
     <resources>
@@ -776,6 +799,7 @@
         <image name="close" width="16" height="16"/>
         <image name="cool" width="78" height="83"/>
         <image name="cross" width="33" height="32"/>
+        <image name="empty" width="310" height="372"/>
         <image name="happy" width="78" height="86"/>
         <image name="heart-tick" width="22" height="21"/>
         <image name="love" width="78" height="82"/>
