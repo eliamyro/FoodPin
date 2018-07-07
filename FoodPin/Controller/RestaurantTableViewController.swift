@@ -16,6 +16,7 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     private var fetchResultController: NSFetchedResultsController<RestaurantMO>!
     private var searchController: UISearchController?
     private var searchResults: [RestaurantMO] = []
+    private let HAS_VIEWED_WALKTHROUGH = "hasViewedWalkthrough"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +71,17 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.hidesBarsOnSwipe = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.bool(forKey: HAS_VIEWED_WALKTHROUGH) {
+            return
+        }
+        
+        let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        if let walkthroughViewController = storyboard.instantiateViewController(withIdentifier: "WalkthroughViewController") as? WalkthroughViewController {
+            present(walkthroughViewController, animated: true, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
