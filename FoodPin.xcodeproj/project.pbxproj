@@ -36,6 +36,8 @@
 		81A8CC7C20E00A7D0015F90C /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81A8CC7220E00A7C0015F90C /* Rubik-MediumItalic.ttf */; };
 		81A8CC7D20E00A7D0015F90C /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81A8CC7320E00A7C0015F90C /* Rubik-Bold.ttf */; };
 		81A8CC7F20E022080015F90C /* RestaurantDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A8CC7E20E022080015F90C /* RestaurantDetailHeaderView.swift */; };
+		81A95DF320F2149B00BA4593 /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A95DF220F2149B00BA4593 /* Discover.storyboard */; };
+		81A95DF520F214C200BA4593 /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A95DF420F214C200BA4593 /* About.storyboard */; };
 		81B9E7B120E25284006CF5EA /* UINavigationController-Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B9E7B020E25284006CF5EA /* UINavigationController-Ext.swift */; };
 		81D41B5420E379F900E5B100 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81D41B5320E379F900E5B100 /* MapKit.framework */; };
 		81D41B5620E3824D00E5B100 /* RestaurantDetailSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D41B5520E3824D00E5B100 /* RestaurantDetailSeparatorCell.swift */; };
@@ -76,6 +78,8 @@
 		81A8CC7220E00A7C0015F90C /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		81A8CC7320E00A7C0015F90C /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		81A8CC7E20E022080015F90C /* RestaurantDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailHeaderView.swift; sourceTree = "<group>"; };
+		81A95DF220F2149B00BA4593 /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		81A95DF420F214C200BA4593 /* About.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
 		81B9E7B020E25284006CF5EA /* UINavigationController-Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController-Ext.swift"; sourceTree = "<group>"; };
 		81D41B5320E379F900E5B100 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		81D41B5520E3824D00E5B100 /* RestaurantDetailSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailSeparatorCell.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 		8122E98C20DFF2A400178604 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				81A95DF420F214C200BA4593 /* About.storyboard */,
+				81A95DF220F2149B00BA4593 /* Discover.storyboard */,
 				816CC0E520D0538A0006A5A5 /* Main.storyboard */,
 				816CC0EA20D0538B0006A5A5 /* LaunchScreen.storyboard */,
 				81E91E5320EE70FC0091641D /* Onboarding.storyboard */,
@@ -284,6 +290,8 @@
 			files = (
 				81A8CC7D20E00A7D0015F90C /* Rubik-Bold.ttf in Resources */,
 				81A8CC7520E00A7D0015F90C /* Rubik-BoldItalic.ttf in Resources */,
+				81A95DF520F214C200BA4593 /* About.storyboard in Resources */,
+				81A95DF320F2149B00BA4593 /* Discover.storyboard in Resources */,
 				816CC0EC20D0538B0006A5A5 /* LaunchScreen.storyboard in Resources */,
 				81A8CC7420E00A7D0015F90C /* Rubik-Light.ttf in Resources */,
 				81A8CC7620E00A7D0015F90C /* Rubik-LightItalic.ttf in Resources */,

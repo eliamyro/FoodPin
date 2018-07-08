@@ -23,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let backButtonImage = UIImage(named: "back")
         UINavigationBar.appearance().backIndicatorImage = backButtonImage
         UINavigationBar.appearance().backIndicatorTransitionMaskImage = backButtonImage
+        
+        // Customize the tab bar
+        UITabBar.appearance().tintColor = UIColor(red: 231, green: 76, blue: 60)
+        UITabBar.appearance().barTintColor = UIColor.white
         return true
     }
 
