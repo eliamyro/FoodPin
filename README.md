@@ -15,3 +15,5 @@ An iOS restaurant application based on tutorials from Appcoda
 
 ![foodpin6](https://user-images.githubusercontent.com/12696030/42205672-c8455086-7ead-11e8-9905-0f5b02654c11.png) 
 ![foodpin7](https://user-images.githubusercontent.com/12696030/42205674-c89272da-7ead-11e8-8a08-b361ce3896be.png)
+
+![simulator screen shot - iphone se - 2018-07-09 at 13 49 13](https://user-images.githubusercontent.com/12696030/42446511-38298202-837f-11e8-832a-89caa8a48156.png)
