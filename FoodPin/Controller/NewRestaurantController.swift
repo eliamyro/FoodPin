@@ -138,7 +138,16 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
                 restaurant.isVisited = false
                 
                 if let restaurantImage = photoImageView.image {
-                    restaurant.image = UIImagePNGRepresentation(restaurantImage)
+                    if restaurantImage.imageOrientation == .up {
+                        restaurant.image = UIImagePNGRepresentation(restaurantImage)
+                    } else {
+                        UIGraphicsBeginImageContext(restaurantImage.size)
+                        restaurantImage.draw(in: CGRect(origin: .zero, size: restaurantImage.size))
+                        let imageCopy = UIGraphicsGetImageFromCurrentImageContext()
+                        UIGraphicsEndImageContext()
+                        restaurant.image = UIImagePNGRepresentation(imageCopy!)
+                    }
+                    
                 }
                 
                 print("Saving data to context...")
