@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import CloudKit
 
 class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -153,6 +154,7 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
                 print("Saving data to context...")
                 appDelegate.saveContext()
             }
+            saveRecordToCloud(restaurant: restaurant)
             performSegue(withIdentifier: "unwindToHome", sender: self)
         } else {
             let alertController = UIAlertController(title: "Oops", message: "We can't proceed because one of the fields is blank. Please note that all fields are required.", preferredStyle: .alert)
@@ -169,5 +171,44 @@ class NewRestaurantController: UITableViewController, UITextFieldDelegate, UIIma
             && !(descriptionTextView.text.isEmpty)
     }
     
+    private func saveRecordToCloud(restaurant: RestaurantMO!) {
+        // Prepare the record to save
+        let record = CKRecord(recordType: "Restaurant")
+        record.setValue(restaurant.name, forKey: "name")
+        record.setValue(restaurant.type, forKey: "type")
+        record.setValue(restaurant.location, forKey: "location")
+        record.setValue(restaurant.phone, forKey: "phone")
+        record.setValue(restaurant.summary, forKey: "description")
+        
+        let imageData = restaurant.image! as Data
+        
+        // Resize the image
+        let originalImage = UIImage(data: imageData)!
+        let scalingFactor = (originalImage.size.width > 1024) ? 1024 / originalImage.size.width : 1.0
+        let scaledImage = UIImage(data: imageData, scale: scalingFactor)!
+        
+        // Write the image to local file for temporary use
+        let imageFilePath = NSTemporaryDirectory() + restaurant.name!
+        let imageFileUrl = URL(fileURLWithPath: imageFilePath)
+        try? UIImageJPEGRepresentation(scaledImage, 0.8)?.write(to: imageFileUrl)
+        
+        // Create image asset for upload
+        let imageAsset = CKAsset(fileURL: imageFileUrl)
+        record.setValue(imageAsset, forKey: "image")
+        
+        // Get the public iCloud database
+        let publicDatabase = CKContainer.default().publicCloudDatabase
+        
+        // Save the record to iCloud
+        publicDatabase.save(record) { (record, error) in
+            if let error = error {
+                print("Failed to save record to iCloud \(error.localizedDescription)")
+                return
+            }
+            
+            // Remove temp file
+            try? FileManager.default.removeItem(at: imageFileUrl)
+        }
+    }
     
 }
