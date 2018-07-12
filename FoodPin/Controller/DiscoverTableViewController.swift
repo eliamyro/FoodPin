@@ -14,6 +14,7 @@ class DiscoverTableViewController: UITableViewController {
     private var restaurants: [CKRecord] = []
     private var spinner = UIActivityIndicatorView()
     private var imageCache = NSCache<CKRecordID, NSURL>()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,12 @@ class DiscoverTableViewController: UITableViewController {
         NSLayoutConstraint.activate([spinner.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150.0),
                                      spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor)])
         spinner.startAnimating()
+        
+        // Pull to refresh control
+        refreshControl = UIRefreshControl()
+        refreshControl?.backgroundColor = .white
+        refreshControl?.tintColor = .gray
+        refreshControl?.addTarget(self, action: #selector(fetchRecordsFromCloud), for: .valueChanged)
         
         fetchRecordsFromCloud()
     }
@@ -106,52 +113,6 @@ class DiscoverTableViewController: UITableViewController {
         
         return cell
     }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
 //    private func fetchRecordsFromCloud() {
 //        // Fetch data using Convenience API
@@ -177,9 +138,11 @@ class DiscoverTableViewController: UITableViewController {
 //        }
 //    }
 
-    private func fetchRecordsFromCloud() {
+    @objc private func fetchRecordsFromCloud() {
+        restaurants.removeAll()
+        tableView.reloadData()
+        
         // Fetch data using Operational API
-
         let cloudContainer = CKContainer.default()
         let publicDatabase = cloudContainer.publicCloudDatabase
         let predicate = NSPredicate(value: true)
@@ -198,6 +161,7 @@ class DiscoverTableViewController: UITableViewController {
 
         queryOperation.queryCompletionBlock = {
             (cursros, error) -> Void in
+            
             if let error = error {
                 print("Failed to get data from iCloud - \(error.localizedDescription)")
                 return
@@ -206,6 +170,12 @@ class DiscoverTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.spinner.stopAnimating()
                 self.tableView.reloadData()
+                
+                if let refreshControl = self.refreshControl {
+                    if refreshControl.isRefreshing {
+                        refreshControl.endRefreshing()
+                    }
+                }
             }
         }
 
