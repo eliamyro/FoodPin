@@ -1,0 +1,90 @@
+
+/* Class = "UILabel"; text = "NAME"; ObjectID = "22Y-ar-ZWC"; */
+"22Y-ar-ZWC.text" = "ΟΝΟΜΑ";
+
+/* Class = "UILabel"; text = "DESCRIPTION"; ObjectID = "2Q1-0T-t17"; */
+"2Q1-0T-t17.text" = "ΠΕΡΙΓΡΑΦΗ";
+
+/* Class = "UITabBarItem"; title = "Favorites"; ObjectID = "2xB-Kj-BxV"; */
+"2xB-Kj-BxV.title" = "Αγαπημένα";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "36S-ly-Pmf"; */
+"36S-ly-Pmf.text" = "Label";
+
+/* Class = "UITextView"; text = "A great restaurant to try out."; ObjectID = "46F-pq-ITf"; */
+"46F-pq-ITf.text" = "Ένα ωραίο εστιατόριο που πρέπει να δοκιμάσετε.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4Od-o0-H7B"; */
+"4Od-o0-H7B.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Love"; ObjectID = "CeW-ku-2u9"; */
+"CeW-ku-2u9.normalTitle" = "Αγαπώ";
+
+/* Class = "UILabel"; text = "ADDRESS"; ObjectID = "Dlc-zr-uog"; */
+"Dlc-zr-uog.text" = "ΔΙΕΥΘΥΝΣΗ";
+
+/* Class = "UILabel"; text = "TYPE"; ObjectID = "Hvr-Nn-sZW"; */
+"Hvr-Nn-sZW.text" = "ΤΥΠΟΣ";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ID7-Mk-M95"; */
+"ID7-Mk-M95.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Cool"; ObjectID = "K2e-pO-Ylj"; */
+"K2e-pO-Ylj.normalTitle" = "Ωραίο";
+
+/* Class = "UINavigationItem"; title = "Food Pin"; ObjectID = "Q5m-ie-YZN"; */
+"Q5m-ie-YZN.title" = "Food Pin";
+
+/* Class = "UITextField"; placeholder = "Fill in the restaurant phone"; ObjectID = "Vui-Qz-KjL"; */
+"Vui-Qz-KjL.placeholder" = "Εισάγετε τηλέφωνο";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "WKE-Uf-aSJ"; */
+"WKE-Uf-aSJ.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Sad"; ObjectID = "WtE-t7-5R1"; */
+"WtE-t7-5R1.normalTitle" = "Λυπημένος";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Wun-Fb-UfV"; */
+"Wun-Fb-UfV.text" = "Όνομα";
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "Wwj-eh-J1A"; */
+"Wwj-eh-J1A.text" = "Τύπος";
+
+/* Class = "UIButton"; normalTitle = "Happy"; ObjectID = "adI-dH-GYA"; */
+"adI-dH-GYA.normalTitle" = "Χαρούμενος";
+
+/* Class = "UIButton"; normalTitle = "Rate it"; ObjectID = "b1d-3y-3Dn"; */
+"b1d-3y-3Dn.normalTitle" = "Βαθμολόγησέ το";
+
+/* Class = "UILabel"; text = "Subsection Title"; ObjectID = "dLs-6O-JKi"; */
+"dLs-6O-JKi.text" = "Subsection Title";
+
+/* Class = "UIButton"; normalTitle = "Angry"; ObjectID = "dMd-92-qJV"; */
+"dMd-92-qJV.normalTitle" = "Θυμωμένος";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "erw-Ki-72V"; */
+"erw-Ki-72V.title" = "Item";
+
+/* Class = "UINavigationItem"; title = "New Restaurant"; ObjectID = "j2r-kT-oK0"; */
+"j2r-kT-oK0.title" = "Νέο εστιατόριο";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "jnw-L4-9Vo"; */
+"jnw-L4-9Vo.text" = "Τοποθεσία";
+
+/* Class = "UIBarButtonItem"; title = "  "; ObjectID = "kW1-lw-v7L"; */
+"kW1-lw-v7L.title" = "  ";
+
+/* Class = "UITextField"; placeholder = "Fill in the restaurant type"; ObjectID = "lKI-6e-eDS"; */
+"lKI-6e-eDS.placeholder" = "Εισάγετε τύπο εστιατορίου";
+
+/* Class = "UILabel"; text = "PHONE"; ObjectID = "qJ4-9y-y2b"; */
+"qJ4-9y-y2b.text" = "ΤΗΛΕΦΩΝΟ";
+
+/* Class = "UITextField"; placeholder = "Fill in the restaurant address"; ObjectID = "sYt-ql-lDk"; */
+"sYt-ql-lDk.placeholder" = "Εισάγετε διεύθυνση";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "wzg-vH-WoN"; */
+"wzg-vH-WoN.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Fill in the restaurant name"; ObjectID = "ymt-1X-ypn"; */
+"ymt-1X-ypn.placeholder" = "Εισάγετε όνομα";

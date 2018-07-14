@@ -1,0 +1,9 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "40i-Gk-a6x"; */
+"40i-Gk-a6x.text" = "Title";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "Bxj-uX-d0Y"; */
+"Bxj-uX-d0Y.title" = "Σχετικά";
+
+/* Class = "UITabBarItem"; title = "About"; ObjectID = "KT1-c2-lRp"; */
+"KT1-c2-lRp.title" = "Σχετικά";

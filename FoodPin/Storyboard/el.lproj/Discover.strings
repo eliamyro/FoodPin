@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Type"; ObjectID = "Il1-IH-tlg"; */
+"Il1-IH-tlg.text" = "Type";
+
+/* Class = "UILabel"; text = "Phone"; ObjectID = "KDK-ed-fgQ"; */
+"KDK-ed-fgQ.text" = "Phone";
+
+/* Class = "UITabBarItem"; title = "Discover"; ObjectID = "KsN-nV-qIP"; */
+"KsN-nV-qIP.title" = "Ανακάλυψε";
+
+/* Class = "UINavigationItem"; title = "Discover"; ObjectID = "P3B-T4-YTq"; */
+"P3B-T4-YTq.title" = "Ανακάλυψε";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "Rlf-GS-yeA"; */
+"Rlf-GS-yeA.text" = "Description";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "SeJ-CT-A7l"; */
+"SeJ-CT-A7l.text" = "Address";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "kUN-PO-OtM"; */
+"kUN-PO-OtM.text" = "Name";
