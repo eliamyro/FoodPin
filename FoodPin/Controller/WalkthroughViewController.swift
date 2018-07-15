@@ -47,6 +47,7 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
                 walkthroughPageViewController?.forwardPage()
             case 2:
                 UserDefaults.standard.set(true, forKey: HAS_VIEWED_WALKTHROUGH)
+                createQuickActions()
                 dismiss(animated: true, completion: nil)
             default: break
             }
@@ -81,5 +82,19 @@ class WalkthroughViewController: UIViewController, WalkthroughPageViewController
     
     func didUpdatePageIndex(currentIndex: Int) {
         updateUI()
+    }
+    
+    private func createQuickActions() {
+        if traitCollection.forceTouchCapability == UIForceTouchCapability.available {
+            if let bundleIdentifier = Bundle.main.bundleIdentifier {
+                let shortCutItem1 = UIApplicationShortcutItem(type: "\(bundleIdentifier).OpenFavorites", localizedTitle: "Show Favorites", localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "favorite-shortcut"), userInfo: nil)
+                
+                let shortCutItem2 = UIApplicationShortcutItem(type: "\(bundleIdentifier).OpenDiscover", localizedTitle: "Discover Restaurants", localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "discover-shortcut"), userInfo: nil)
+                
+                let shortCutItem3 = UIApplicationShortcutItem(type: "\(bundleIdentifier).NewRestaurant", localizedTitle: "New Restaurant", localizedSubtitle: nil, icon: UIApplicationShortcutIcon(type: .add), userInfo: nil)
+                
+                UIApplication.shared.shortcutItems = [shortCutItem1, shortCutItem2, shortCutItem3]
+            }
+        }
     }
 }

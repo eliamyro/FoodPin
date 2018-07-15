@@ -29,6 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().barTintColor = UIColor.white
         return true
     }
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        completionHandler(handleQuickAction(shortcutItem: shortcutItem))
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -96,6 +100,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    private func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        let shortcutType = shortcutItem.type
+        guard let shortcutIdentifier = QuickAction(fullIdentifier: shortcutType) else {
+            return false
+        }
+        
+        guard let tabBarController = window?.rootViewController as? UITabBarController else {
+            return false
+        }
+        
+        switch shortcutIdentifier {
+        case .OpenFavorites:
+            tabBarController.selectedIndex = 0
+        case .OpenDiscover:
+            tabBarController.selectedIndex = 1
+        case .NewRestaurant:
+            if let navController = tabBarController.viewControllers?[0] {
+                let restaurantTableViewController = navController.childViewControllers[0]
+                
+                restaurantTableViewController.performSegue(withIdentifier: "addRestaurant", sender: restaurantTableViewController)
+            } else {
+                return false
+            }
+        }
+        return true
+    }
+}
 
+enum QuickAction: String {
+    
+    case OpenFavorites = "OpenFavorites"
+    case OpenDiscover = "OpenDiscover"
+    case NewRestaurant = "NewRestaurant"
+    
+    init?(fullIdentifier: String) {
+        guard let shortcutIdentifier = fullIdentifier.components(separatedBy: ".").last else {
+            return nil
+        }
+        
+        self.init(rawValue: shortcutIdentifier)
+    }
 }
 

@@ -20,6 +20,12 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Register for peek and pop
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self as UIViewControllerPreviewingDelegate, sourceView: view)
+        }
+        
         tableView.backgroundView = emptyRestaurantView
         tableView.backgroundView?.isHidden = true
         
@@ -313,5 +319,30 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
             tableView.reloadData()
         }
     }
+}
 
+extension RestaurantTableViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location) else {
+            return nil
+        }
+        
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            return nil
+        }
+        
+        guard let restaurantDetailViewController = storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailViewController") as? RestaurantDetailViewController else {
+            return nil
+        }
+        
+        let selectedRestaurant = restaurants[indexPath.row]
+        restaurantDetailViewController.restaurant = selectedRestaurant
+        restaurantDetailViewController.preferredContentSize = CGSize(width: 0.0, height: 460.0)
+        previewingContext.sourceRect = cell.frame
+        return restaurantDetailViewController
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: self)
+    }
 }

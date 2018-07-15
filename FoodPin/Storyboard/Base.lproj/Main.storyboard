@@ -136,7 +136,7 @@
                     <viewLayoutGuide key="safeArea" id="avA-Od-AGZ"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2015.2" y="147.97601199400302"/>
+            <point key="canvasLocation" x="1754" y="308"/>
         </scene>
         <!--New Restaurant-->
         <scene sceneID="FHh-xw-Gdo">
@@ -377,7 +377,7 @@
         <!--Restaurant Detail View Controller-->
         <scene sceneID="Z5e-Wb-2tY">
             <objects>
-                <viewController id="Oaa-H9-Nfn" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RestaurantDetailViewController" id="Oaa-H9-Nfn" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uiP-eL-3lx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
