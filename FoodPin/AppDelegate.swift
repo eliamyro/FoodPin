@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,6 +28,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Customize the tab bar
         UITabBar.appearance().tintColor = UIColor(red: 231, green: 76, blue: 60)
         UITabBar.appearance().barTintColor = UIColor.white
+        
+        // User Notifications
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if granted {
+                print("User notifications are allowed")
+            } else {
+                print("User notifications are not allowed")
+            }
+        }
+        
+        UNUserNotificationCenter.current().delegate = self
+        
         return true
     }
     
@@ -141,6 +154,24 @@ enum QuickAction: String {
         }
         
         self.init(rawValue: shortcutIdentifier)
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        if response.actionIdentifier == "foodpin.makeReservation" {
+            print("Make reservation...")
+            if let phone = response.notification.request.content.userInfo["phone"] {
+                let telUrl = "tel://\(phone)"
+                if let url = URL(string: telUrl) {
+                    if UIApplication.shared.canOpenURL(url) {
+                        print("Calling \(telUrl)")
+                        UIApplication.shared.open(url)
+                    }
+                }
+            }
+        }
+        completionHandler()
     }
 }
 
